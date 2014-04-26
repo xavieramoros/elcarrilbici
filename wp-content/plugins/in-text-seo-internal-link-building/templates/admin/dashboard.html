@@ -1,0 +1,20 @@
+<link rel="stylesheet" type="text/css" href="../wp-content/plugins/in-text-seo-internal-link-building/css/notedlinks.css" media="screen" />
+<div class="wrap">
+	<div class="logo"></div>
+    <h2 class="main-title">
+        In-text SEO internal link building
+    </h2>
+    <p>Allows you to save time by automating link building based on rules. A link rules is a pair of keyword to link and a url to link to. 
+        We also provide analytics data to monitor user clicks and suggest links rules for optimal results...and it’s Free!</p>
+    <div class="form-container">
+	    <form name ='notedlinks' action="<?php if (isset($sAction)) echo $sAction; ?>" method="post">
+	        <input type="hidden" name="_wpnonce" value="<?php if (isset($nonce)) echo $nonce; ?>" />
+	        <input type="hidden" id="actualize" name="actualize" value="true"/>
+	        <input type="submit" name="update" id="update" class="button button-primary" value="Apply link rules"/>
+			<input type="submit" name="get-link-stats" id="get-link-stats" class="button button-primary" value="Get link stats*"/>
+	        <span class="get-stats-msg"><?php if (isset($linkStatsMsg)) echo $linkStatsMsg;?></span>
+	    </form>
+	</div>
+	<div class="text-get-link-stats">( *This process might take a few minutes )</div>
+	<div><?php echo $sIframe; ?></div>
+</div>

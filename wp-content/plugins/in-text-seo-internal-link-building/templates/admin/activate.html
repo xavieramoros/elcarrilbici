@@ -1,0 +1,34 @@
+<script src="../wp-content/plugins/in-text-seo-internal-link-building/js/activate.js" language="Javascript"></script>
+<link rel="stylesheet" type="text/css" href="../wp-content/plugins/in-text-seo-internal-link-building/css/notedlinks.css" media="screen" />
+<div class="wrap">
+    <div class="logo"></div>
+    <h2 class="main-title">
+        In-text SEO internal link building
+    </h2>
+    <p>Allows you to save time by automating link building based on rules. We also provide analytics data to monitor user clicks and suggest links rules for optimal results!</p>
+    
+    <?php if( !empty($aConfig['process_page']['nle']) && $aConfig['process_page']['active'] == false ) { ?>
+        <div class="validate-advise">
+            <p><b>Please remember to validate your email adress to activate the plugin, until then, links will not be created.</b></p>
+            <p>If you didn't receive an email from us at <b><?php echo $aConfig['process_page']['nle']; ?></b>, place a request to <a href="admin.php?page=activate.php">resend now</a>  
+                or if you need to change your email, place a request to <a href="admin.php?page=activate.php">change on your registered email</a>.</p>
+        </div>
+    <?php }?>
+    
+    <div class="active-title">
+        <b>Activate the plugin</b>
+    </div>
+    <div>You need to activate your plugin with your email to start using Notedlinks. <a target="_blank" href="http://notedlinks.com/contact-us">Contact us</a> if you have any questions.</div>
+    <form id='activate' name ='notedlinks' action="<?php echo $sAction; ?>" method="post">
+        <input type="hidden" id="_wpnonce" name="_wpnonce" value="<?php if( isset($nonce) ) { echo $nonce; }?>" />
+    <div class="input-content">
+        Email:
+        <input id="nle" type="text" name="nle" value="<?php echo $aConfig['process_page']['nle']; ?>"/>
+        <div id="terms-text">By clicking the send button you are accepting the <a target="_blank" href="http://notedlinks.com/terms">Terms & conditions</a>.</div>
+        <div class="send-button submit">
+            <input type="submit" name="send" id="send" class="button button-primary" value="Send"/>
+        </div>
+        <div class="msg-error"><?php if( $sMsg ) { echo $sMsg; } ?></div>
+    </div>
+    </form>
+</div>

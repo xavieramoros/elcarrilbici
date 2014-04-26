@@ -1,0 +1,156 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js" language="Javascript"></script>
+<script src="../wp-content/plugins/in-text-seo-internal-link-building/js/index.js" language="Javascript"></script>
+<link rel="stylesheet" type="text/css" href="../wp-content/plugins/in-text-seo-internal-link-building/css/notedlinks.css" media="screen" />
+<div class="wrap">
+    <div class="logo"></div>
+    <h2 class="main-title">
+        In-text SEO internal link building
+    </h2>
+    <h3>Overview</h3>
+    <p>The Notedlinks in-text SEO Internal Link Building plugin allows you to automate the process of linking keywords and phrases in your posts with the appropriate posts of your blog.</p>
+    <p>- To set up the keywords and rules, please go to the dashboard page:</p>
+    <div class="links-notedlinks">
+        <a href="admin.php?page=dashboard.php" >Dashboard</a> | <a href="<?php echo URL_FAQ;?>" target="_blank">FAQ</a> | <a href="<?php echo URL_SUPPORT; ?>" target="_blank">Support</a>
+    </div>
+    <?php if($aConfig['process_page']['active'] == false) {?>
+        <div class="validate-advise">
+            <p><b>Please remember to validate your email adress to activate the plugin, until then, links will not be created.</b></p>
+            <p>If you didn't receive an email from us at <b><?php echo $aConfig['process_page']['nle']; ?></b>, place a request to <a href="admin.php?page=activate.php">resend now</a>  
+                or if you need to change your email, place a request to <a id='change-email' href="admin.php?page=activate.php">change on your registered email</a>.</p>
+        </div>
+    <?php } ?>
+    
+    <h3>General settings</h3>
+    <form id='notedlinks' name ='notedlinks' action="<?php echo $sAction; ?>" method="post">
+        <input type="hidden" id="_wpnonce" name="_wpnonce" value="<?php echo $nonce; ?>" />
+        <table class="wp-list-table widefat plugins" cellspacing="0">
+            <tbody>
+                <tr class="inactive">
+                    <td class="plugin-title">
+                        <strong style="display: inline">API key:</strong>
+                        <span><?php echo $aConfig['process_page']['api_key'];?></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="wp-list-table widefat plugins" cellspacing="0" style='margin-top:20px;'>
+            <thead>
+                <tr><th scope="col" class="manage-column column-name"  colspan="3"><strong>Target: Define which contents you wish to add links to</strong></th></tr>
+            </thead>
+            <tbody>
+                <tr class="inactive">
+                    <th scope="row" class="check-column">
+                        <input name="content_scraping" type="checkbox" value="1"  <?php echo $aCheckBox['content_scraping']; ?> />
+                    </th>
+                    <td class="plugin-title"><strong>Pages & Posts</strong></td>
+                </tr>
+                <tr class="inactive">
+                    <th scope="row" class="check-column">
+                        <input name="comment_scraping" type="checkbox" value="1"  <?php echo $aCheckBox['comment_scraping']; ?>/>
+                    </th>
+                    <td class="plugin-title"><strong>Comments</strong></td>
+
+                </tr>
+            </tbody>
+        </table>
+        <table class="wp-list-table widefat plugins" cellspacing="0" style='margin-top:20px;'>
+            <thead>
+                <tr><th scope="col" class="manage-column column-name"  colspan="3"><strong>Debug</strong></th></tr>
+            </thead>
+            <tbody>
+                <tr class="inactive">
+                    <th scope="row" class="check-column">
+                        <input name="debugging" type="checkbox" value="1"  <?php echo $aCheckBox['debugging']; ?>/>
+                    </th>
+                    <td class="plugin-title"><strong>Debugging mode</strong></td>
+                    <td class="column-description desc">
+                        <p>This feature is only for advanced users</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table  class="wp-list-table widefat plugins" cellspacing="0" style='margin-top:20px;'>
+            <thead>
+                <tr ><th scope="col" class="manage-column column-name" colspan="2" ><strong>Ignore posts and pages</strong></th></tr>
+            </thead>
+            
+            <tbody >
+                <tr class="inactive">
+                    <td class="plugin-title" width='50%'>
+                        <textarea  placeholder="" id="ignore_page" name="ignore_page"  style='width:100%;height:100px;' ><?php echo $aConfig['ignore_page']; ?></textarea>
+                    </td>
+                    <td class="column-description desc">
+                        <p>List of posts/pages to be ignored when creating links. <br>Enter the page/post title on a new line (list NOT case sensitive):</p>
+                        <p><b>For example:</b><br>
+                           Title of page X;<br>
+                           This is the title of post Y;<br></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table  class="wp-list-table widefat plugins" cellspacing="0" style='margin-top:20px;'>
+            <thead>
+                <tr ><th scope="col" class="manage-column column-name" colspan="2" ><strong>Links general limits</strong></th></tr>
+            </thead>
+            <tbody >
+                <tr class="inactive">
+                    <td class="plugin-title">
+                        <input id="keyword_max" style ='width: 25px;' name="keyword_max" value="<?php echo $aConfig['appearance_limit']['keyword_max']; ?>"  />
+                    </td>
+                    <td class="column-description desc">
+                        <p>Maximum number of links created with the same keyword. Set 0 for unlimited links.</p>
+                        <span id="msg-key-max"></span>
+                    </td>
+                </tr>
+                <!--tr class="inactive">
+                        <td class="plugin-title">
+                                <input  style ='width: 25px;' name="url_max" value="<?php echo $aConfig['appearance_limit']['url_max']; ?>"  />
+                        </td>
+                        <td class="column-description desc">
+                                <p>Limit maximum number of links pointing to the same URLs. Works only when Max Single above is set to 1. Set to 0 for no limit.</p>
+                        </td>
+                </tr-->
+                <tr class="inactive">
+                    <td class="plugin-title">
+                        <input id="page_max" name="page_max" style ='width: 25px;' name="page_max" value="<?php echo $aConfig['appearance_limit']['page_max']; ?>"  />
+                    </td>
+                    <td class="column-description desc">
+                        <p>Maximum number if links in a single post/page. Set 0 for unlimited links.</p>
+                        <span id="msg-page-max"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table  class="wp-list-table widefat plugins" cellspacing="0" style='margin-top:20px;'>
+            <thead>
+                <tr ><th scope="col" class="manage-column column-name" colspan="3" ><strong>Links attributes</strong></th></tr>
+            </thead>
+            <tbody >
+                <tr class="inactive">
+                    <td class="plugin-title">
+                        <input name="external_nofollow" type="checkbox" value="1"  <?php echo $aCheckBox['external_nofollow']; ?>/>
+                    </td>
+                    <td class="column-description desc">
+                        <p>Add nofollow attribute</p>
+                    </td>
+                    <td class="column-description desc">
+                        <p>If you check this box you will prevent search engine robots from following the links created by the plugin.</p>
+                    </td>
+                </tr>
+                <tr class="inactive">
+                    <td class="plugin-title">
+                        <input name="external_target" type="checkbox" value="1"  <?php echo $aCheckBox['external_target']; ?>/>
+                    </td>
+                    <td class="column-description desc">
+                        <p>Open Links in new window</p>
+                    </td>
+                    <td class="column-description desc"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="submit">
+            <input type="submit" name="save-changes" id="save-changes" class="button button-primary" value="Save Changes"/>
+            <input type="submit" name="default-settings" id="default-settings" class="button button-primary" value="Reset Default Settings"/>
+        </p>  
+    </form>
+</div>

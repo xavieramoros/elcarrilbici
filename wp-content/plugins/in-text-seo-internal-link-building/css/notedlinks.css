@@ -1,0 +1,142 @@
+/* 
+    Document   : notedlinks
+    Created on : 09-jul-2013, 15:04:02
+    Author     : notedlinks
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.logo{
+    background: url('../images/logo-notedlinks.png');
+    width: 250px;
+    height: 47px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.msg-notification {
+    color: blue;
+}
+
+.links-notedlinks{
+    width:212px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.active-title{
+    margin-top: 20px;
+}
+
+.input-content{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-left: 150px; 
+}
+
+#terms-text{
+    color: #5F8E14;
+    margin-left: 42px;
+}
+
+.send-button{
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.send-button button{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #6db3f2; /* Old browsers */
+    background: -moz-linear-gradient(top,  #6db3f2 0%, #54a3ee 50%, #3690f0 51%, #1e69de 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6db3f2), color-stop(50%,#54a3ee), color-stop(51%,#3690f0), color-stop(100%,#1e69de)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de',GradientType=0 ); /* IE6-9 */
+    font: 16px arial;
+    font-style: inherit;
+    font-weight:bold;
+    color: black;
+}
+
+.main-title h2{
+    width: 100%;
+    float:left;
+    margin-bottom: 40px;
+}
+
+.msg-error{
+    color: red;
+    margin: 10px;
+}
+
+.validate-advise{
+    background-color: #FFEBE8;
+    text-align: center;
+    border:solid red 1px;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.setting-redirect{
+    background-color: #F1F1F1;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+#msg-key-max{
+    color: red;
+}
+
+#msg-page-max{
+    color: red;
+}
+
+.max-page-td td {
+    width: 200px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.max-key-td td {
+    width: 200px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.get-stats-msg {
+    margin-left: 15px;
+}
+
+.form-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.text-get-link-stats {
+    margin-bottom: 15px;
+    font-family: sans-serif;
+    font-size: 11px;
+    line-height: 1.4em;
+}
+
+iframe#nl-iframe {
+    background-color: #FFFFFF !important;
+    border: none !important;
+    outline: none !important;
+}
