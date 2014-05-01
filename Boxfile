@@ -10,6 +10,7 @@ web1:
     - "mv pagoda/wp-config.php wp-config.php"
     - "mv pagoda/.htaccess .htaccess"    
     - "rm -R pagoda"
+
 db1:
   name: wp-db
   type: mysql
