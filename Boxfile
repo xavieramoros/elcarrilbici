@@ -4,7 +4,7 @@ web1:
   apache_error_log: true
   php_error_log: true
   php_fpm_log: true  
- shared_writable_dirs:
+shared_writable_dirs:
     - wp-content/uploads/
 after_build:
     - "mv pagoda/wp-config.php wp-config.php"
