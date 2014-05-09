@@ -12,6 +12,15 @@ web1:
     - "rm -R pagoda"
   php_extensions:
     - curl
+    - mysql
+    - http
+    - json
+    - xml
+    - simplexml
+    - hash
+    - iconv
+    - soap
+
 db1:
   name: wp-db
   type: mysql
