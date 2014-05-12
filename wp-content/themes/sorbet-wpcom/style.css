@@ -1177,6 +1177,7 @@ a:hover, a:focus, a:active {
   border-bottom: 5px solid #a5e5e2;
 }
 .panel#menu-toggle-nav {
+  display: block;  
   background: #f45145;
   border-bottom: 5px solid #f23628;
 }

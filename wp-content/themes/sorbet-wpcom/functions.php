@@ -108,6 +108,8 @@ add_action( 'widgets_init', 'sorbet_widgets_init' );
 function sorbet_scripts() {
 	wp_enqueue_style( 'sorbet-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/custom.css' ); //our stylesheet
+
 	wp_enqueue_style( 'sorbet-source-sans-pro' );
 	wp_enqueue_style( 'sorbet-pt-serif' );
 
