@@ -35,8 +35,15 @@
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.7);
    padding: 25px 20px 5px 25px; 
-   position: absolute; 
-   top: 275px; 
+   /*position: absolute; */
+   position: relative;    
+   /*top: 275px; */
    left: 0; 
    width: 35%;  
+   position: absolute;
+   /*top: 10px;*/
+   bottom: 20%;
+   margin-bottom: 2%;
 }
+
+
