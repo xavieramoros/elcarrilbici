@@ -5,7 +5,7 @@
     Author: Xavier Amoros
 */
 .site-header img{
-    max-height:80%;
+    max-height:60%;
 }
 
 .site-title{
@@ -20,6 +20,7 @@
 
 .site-description a{
     font-size:1.1em;
+    color:rgba(150, 151, 153, 1); 
 }
 
 .site-header { 
@@ -28,18 +29,14 @@
 }
 
 .site-branding { 
-   position: absolute; 
-   top: 200px; 
-   left: 0; 
-   width: 100%; 
-}
-
-.site-branding{
    color: white; 
    font: bold 24px/45px Helvetica, Sans-Serif; 
    letter-spacing: -1px;  
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.7);
-   padding: 10px; 
- 
+   padding: 25px 20px 5px 25px; 
+   position: absolute; 
+   top: 275px; 
+   left: 0; 
+   width: 35%;  
 }

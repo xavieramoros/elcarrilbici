@@ -26,12 +26,13 @@
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
 		</a>
+		<div class="site-branding">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</div>
+
 		<?php endif; // End header image check. ?>
 		<div class="site-header-wrapper">
-			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</div>
 
 			<div class="toggles">
 				<div id="menu-toggle" class="toggle" title="<?php esc_attr_e( 'Menu', 'sorbet' ); ?>"><span class="screen-reader-text"><?php _e( 'Menu', 'sorbet' ); ?></span></div>
