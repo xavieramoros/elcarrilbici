@@ -26,5 +26,9 @@
 
 <?php wp_footer(); ?>
 
+<!-- FIXME Script to test marketing.AI -->
+<script src="//hello.staticstuff.net/w/relevancyautomation.js" type="text/javascript"></script>
+<script type="text/javascript">try{ relevancyautomation.init(100752113); }catch(e){}</script>
+
 </body>
 </html>
